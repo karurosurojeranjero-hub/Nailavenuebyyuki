@@ -2,7 +2,7 @@
    EDIT ME — everything customers see (prices, policies, links) lives here
    ===================================================================== */
 const CONFIG = {
-  // The local Node server (server.js) answers at /api. Leave as is.
+  // On Netlify the API is a Netlify Function at /api (netlify/functions/api.mts); locally server.js answers. Leave as is.
   API_URL: "/api",
 
   // Editable social links. Leave "" to hide a button.
