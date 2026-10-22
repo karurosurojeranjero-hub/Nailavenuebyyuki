@@ -1,0 +1,14 @@
+{
+  "name": "Nail Avenue by Yuki",
+  "short_name": "Nail Avenue",
+  "description": "Book your nail appointment — When Nails Meet Coffee.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fbf6ee",
+  "theme_color": "#5b3a29",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

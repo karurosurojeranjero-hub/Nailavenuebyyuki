@@ -1,0 +1,18 @@
+# Render Blueprint — one click deploy with a persistent disk (your appointments survive restarts).
+services:
+  - type: web
+    name: nail-avenue
+    runtime: docker
+    plan: starter            # a persistent disk needs a paid instance
+    healthCheckPath: /healthz
+    disk:
+      name: nail-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: ADMIN_USER
+        value: YUKI
+      - key: ADMIN_PASS
+        sync: false          # you type this in the Render dashboard — it is never stored in the code
+      - key: DATA_DIR
+        value: /data

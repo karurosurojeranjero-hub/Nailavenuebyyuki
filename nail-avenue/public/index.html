@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nail Avenue by Yuki — When Nails Meet Coffee</title>
+<meta name="description" content="Book your next nail appointment with Nail Avenue by Yuki, a cozy home-based nail studio. When Nails Meet Coffee.">
+<meta name="theme-color" content="#5b3a29">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nail Avenue by Yuki — When Nails Meet Coffee">
+<meta property="og:description" content="Book your next nail appointment online. Gel manicure, hard gel, extensions, pedicure and a free coffee.">
+<meta property="og:image" content="photos/full.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Nail Avenue">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="js/boot.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="filewarn" id="fileWarn" hidden><b>Almost there!</b> This page was opened as a file, so booking and admin can’t work. Double‑click <b>start.bat</b> (or run <code>npm start</code>) and open <b>http://localhost:3000</b> instead.</div>
+
+
+<header class="nav">
+  <a class="brand" href="#home" aria-label="Nail Avenue by Yuki — home"><img src="assets/logo-mark.png" alt=""><span class="brand-main">Nail Avenue</span><span class="brand-sub">by Yuki</span></a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav id="menu">
+    <a href="#looks">Gallery</a>
+    <a href="#services">Price List</a>
+    <a href="#manage">My Booking</a>
+    <a href="#contact">Contact Us</a>
+    <a class="cta-link" href="#book">Book Now</a>
+    <a class="admin-btn js-open-admin" href="#admin" id="navAdmin">🔐 Admin</a>
+  </nav>
+</header>
+
+<main>
+<div class="hero-bg" id="home">
+  <div class="hero">
+    <div>
+      <img class="logo" src="assets/logo.png" alt="Nail Avenue by Yuki">
+      <p class="tag">When Nails Meet Coffee ☕</p>
+      <h1>Your Next Nail Set Awaits.</h1>
+      <p class="d">Beautiful nails, personalized designs, and a cozy nail experience. Book your next nail appointment with Nail Avenue by Yuki.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#book">Book an Appointment</a>
+        <a class="btn btn-soft" href="#services">View Price List</a>
+        <a class="btn btn-ghost" href="#contact">Contact Us</a>
+      </div>
+    </div>
+    <div class="collage" id="collage" aria-hidden="false"></div>
+  </div>
+</div>
+
+<div class="ribbon" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<section id="looks">
+  <div class="wrap">
+    <p class="eyebrow">The Nail Gallery</p>
+    <h2>Pick Your Look</h2>
+    <div class="orn">✦ ✦ ✦</div>
+    <p class="lead">From simple and clean to full-on statement sets — tap a photo to see it up close.</p>
+    <div class="looks" id="looksGrid"></div>
+    <p class="swipe">Swipe to see more →</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap reveal">
+    <p class="eyebrow">About</p>
+    <h2>A Cozy Home-Based Nail Studio</h2>
+    <div class="orn">✦ ✦ ✦</div>
+    <p class="t">Nail Avenue by Yuki is a home-based nail studio where every set is made with care, and every appointment comes with a little coffee. Expect a simple, comfortable setup — no salon fuss, just good nails and good company. ☕💅</p>
+    <div class="chips"><span class="chip">🏡 Home-based studio</span><span class="chip">📅 Open every day</span><span class="chip">☕ Complimentary drink</span></div>
+  </div>
+</section>
+
+<section class="coffee" id="coffee">
+  <div class="wrap reveal">
+    <p class="eyebrow">Free with your appointment</p>
+    <h2>When Nails Meet Coffee</h2>
+    <p class="t">Enjoy a complimentary drink while getting your nails done. Pick your favorite when you book. 🤎</p>
+    <div class="dgrid" id="dgrid"></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">Services</p>
+    <h2>Price List</h2>
+    <div class="orn">✦ ✦ ✦</div>
+    <p class="lead">All prices are in Philippine pesos (₱).</p>
+    <div id="priceList"></div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <p class="eyebrow">Appointments</p>
+    <h2>Book an Appointment</h2>
+    <div class="orn">✦ ✦ ✦</div>
+    <p class="lead">Open every day, Monday to Sunday. Pick a date, choose your time, and send your request — no need to message first.</p>
+
+    <form id="bookForm" novalidate autocomplete="on">
+      <div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" id="website" tabindex="-1" autocomplete="off"></div>
+
+      <fieldset>
+        <legend>1 · About You</legend>
+        <div class="field" data-f="name">
+          <label class="lbl" for="name">Full Name <span class="req">*</span></label>
+          <input type="text" id="name" autocomplete="name" placeholder="Your full name">
+          <div class="err">Please enter your full name.</div>
+        </div>
+        <div class="field" data-f="phone">
+          <label class="lbl" for="phone">Contact Number <span class="req">*</span></label>
+          <input type="tel" id="phone" autocomplete="tel" inputmode="tel" placeholder="09XX XXX XXXX">
+          <div class="err">Please enter a valid contact number.</div>
+        </div>
+        <div class="field" data-f="social">
+          <label class="lbl" for="social">Facebook or Instagram Name <span class="req">*</span></label>
+          <input type="text" id="social" placeholder="Your Facebook or Instagram name">
+          <div class="err">Please enter your Facebook or Instagram name.</div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2 · Date &amp; Time</legend>
+        <div class="grid2">
+          <div class="field" data-f="date">
+            <label class="lbl" for="date">Preferred Date <span class="req">*</span></label>
+            <input type="date" id="date">
+            <div class="err">Please choose a date.</div>
+          </div>
+          <div class="field" data-f="clients">
+            <label class="lbl" for="clients">Number of Clients <span class="req">*</span></label>
+            <input type="number" id="clients" min="1" max="10" value="1" inputmode="numeric">
+            <div class="err">Enter how many clients (1–10).</div>
+          </div>
+        </div>
+        <div class="field" data-f="slot">
+          <label class="lbl">Available Time Slot <span class="req">*</span></label>
+          <div class="slots" id="slots"><p class="hint">Choose a date to see available times.</p></div>
+          <p class="live" id="liveNote" style="display:none"></p>
+          <div class="toastline" id="slotToast"></div>
+          <p class="hint">All times are Philippine Time (PHT).</p>
+          <div class="err">Please choose a time slot.</div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3 · Services</legend>
+        <div class="field" data-f="services">
+          <p class="hint" style="margin:-4px 0 12px">Select one or more services. <span class="req">*</span></p>
+          <div id="svcPicker"></div>
+          <div class="err">Please select at least one service.</div>
+        </div>
+        <div class="field">
+          <label class="lbl" for="design">Nail Design Preference <span class="hint" style="display:inline">(optional)</span></label>
+          <textarea id="design" placeholder="Colors, style, shapes, charms… tell us what you have in mind."></textarea>
+        </div>
+        <div class="field">
+          <label class="lbl">Upload Nail Design Inspiration <span class="hint" style="display:inline">(optional, up to 3 photos)</span></label>
+          <div class="upload">
+            <input type="file" id="files" accept="image/*" multiple hidden>
+            <button type="button" class="btn btn-soft btn-sm" id="pickFiles">📷 Choose photos</button>
+            <div class="thumbs" id="thumbs"></div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="coffee-box">
+        <legend>A Little Coffee With Your Nail Date? ☕</legend>
+        <p class="sub">Enjoy a complimentary drink while getting your nails done! Choose your favorite coffee or matcha and let us make your nail session extra special. 🤎</p>
+        <p class="lbl">Would you like a complimentary drink during your appointment?</p>
+        <div class="yn">
+          <label><input type="radio" name="wantDrink" value="yes" hidden><span class="pill">Yes, please! ☕</span></label>
+          <label><input type="radio" name="wantDrink" value="no" hidden><span class="pill">No, thank you.</span></label>
+        </div>
+        <div class="field" data-f="drink">
+          <div class="drinks" id="drinks"></div>
+          <div class="err">Please choose your free drink.</div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>4 · Booking Rules &amp; Regulations</legend>
+        <ol class="rules" id="rulesList"></ol>
+        <div class="field" data-f="agree" style="margin:0">
+          <label class="agree"><input type="checkbox" id="agree"><span>I have read, understood, and agreed to the booking rules and regulations of Nail Avenue by Yuki.</span></label>
+          <div class="err">You need to agree to the booking rules to continue.</div>
+        </div>
+      </fieldset>
+
+      <div class="summary" id="summary"></div>
+      <div class="pending-note">⏳ Your request stays <b>Pending</b> until Yuki confirms it. It is not officially booked until you receive our confirmation.</div>
+
+      <fieldset class="ready">
+        <p class="q">Are you ready to submit your appointment request?</p>
+        <div class="field" data-f="ready" style="margin:0">
+          <label class="opt"><input type="radio" name="ready" value="yes"><span>YES — I have checked my information and agree to the booking policies.</span></label>
+          <label class="opt"><input type="radio" name="ready" value="no"><span>NO — I want to review my information first.</span></label>
+          <div class="err" id="readyErr">Please select YES to submit your request.</div>
+        </div>
+      </fieldset>
+
+      <div class="fail" id="failBox"></div>
+      <div class="submit-wrap"><button type="submit" class="btn btn-primary" id="submitBtn">Submit Appointment Request</button></div>
+    </form>
+  </div>
+</section>
+
+<section class="manage" id="manage">
+  <div class="wrap">
+    <p class="eyebrow">Already booked?</p>
+    <h2>Check or Cancel My Booking</h2>
+    <div class="orn">✦ ✦ ✦</div>
+    <p class="lead">Enter your Booking ID and the contact number you booked with.</p>
+    <div class="box">
+      <form id="lookupForm" novalidate>
+        <div class="field"><label class="lbl" for="lkId">Booking ID</label><input type="text" id="lkId" placeholder="NAY-XXXXXX" autocapitalize="characters"></div>
+        <div class="field"><label class="lbl" for="lkPhone">Contact Number</label><input type="tel" id="lkPhone" inputmode="tel" placeholder="09XX XXX XXXX"></div>
+        <button class="btn btn-primary" style="width:100%" type="submit" id="lkBtn">Find My Booking</button>
+      </form>
+      <div class="msg no" id="lkErr" style="display:none"></div>
+      <div class="mres" id="lkRes"></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Say hello</p>
+    <h2>Contact Us</h2>
+    <div class="orn">✦ ✦ ✦</div>
+    <p class="lead">Questions about your booking? Message Nail Avenue by Yuki on social media.</p>
+    <div class="links" id="socialLinks"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img class="flogo" src="assets/logo-light.png" alt="Nail Avenue by Yuki">
+  <p>When Nails Meet Coffee ☕</p>
+  <p>Open daily · 10:00 AM · 12:00 PM · 3:00 PM · 6:00 PM · 9:00 PM (PHT)</p>
+  <button class="btn btn-soft btn-sm" id="installBtn" type="button">📲 Install the App</button>
+  <p id="iosHint" style="display:none">On iPhone: tap Share, then “Add to Home Screen”.</p>
+  <p style="margin-top:18px"><a class="adm js-open-admin" href="#admin" id="adminLink">Admin</a></p>
+</footer>
+
+<a class="stickybook" href="#book" id="stickyBook">💅 Book an Appointment</a>
+
+<div class="modal" id="thanks" role="dialog" aria-modal="true" aria-labelledby="thanksTitle">
+  <div class="card">
+    <h3 id="thanksTitle">Request Received 💅☕</h3>
+    <p>Thank you for choosing Nail Avenue by Yuki! 💅☕ Your appointment request has been received. Please wait for our confirmation message before considering your appointment officially booked. We can’t wait to create your dream nail set!</p>
+    <div>Your Booking ID<br><span class="id" id="thanksId"></span></div>
+    <p><span class="status st-Pending">Pending</span> — waiting for Yuki’s approval</p>
+    <p style="font-size:.85rem">Save this ID. You can check your status or cancel (at least 24 hours before your appointment) under “My Booking”.</p>
+    <button class="btn btn-primary" id="thanksClose" type="button">Done</button>
+  </div>
+</div>
+
+<div class="modal lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo preview">
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<!-- ============================ ADMIN ============================ -->
+<div class="admin" id="admin" hidden>
+  <div class="atop">
+    <img src="assets/logo-mark.png" alt="">
+    <b>Admin · Nail Avenue</b>
+    <button class="btn btn-soft" id="admOut" type="button" hidden>Sign out</button>
+    <button class="btn btn-ghost" id="admClose" type="button" style="color:var(--cream);border-color:var(--cream)">Close</button>
+  </div>
+  <div class="abody">
+
+    <div class="acard" id="admLogin" hidden>
+      <h3>Welcome back</h3>
+      <p class="sub">Sign in to manage appointments.</p>
+      <form id="admLoginForm" autocomplete="on" novalidate>
+        <div class="field"><label class="lbl" for="admUser">Username</label><input type="text" id="admUser" autocomplete="username" autocapitalize="off" spellcheck="false"></div>
+        <div class="field"><label class="lbl" for="admPass">Password</label>
+          <div class="pw"><input type="password" id="admPass" autocomplete="current-password"><button type="button" data-show="admPass">Show</button></div></div>
+        <div class="msg no" id="admLoginErr" style="display:none"></div>
+        <button class="btn btn-primary" style="width:100%;margin-top:12px" type="submit" id="admLoginBtn">Sign in</button>
+      </form>
+    </div>
+
+    <div id="admDash" hidden>
+      <div class="stats" id="admStats"></div>
+      <div class="tabs" id="admTabs">
+        <button class="tab on" data-tab="cal" type="button">📅 Calendar</button>
+        <button class="tab" data-tab="pending" type="button">Pending</button>
+        <button class="tab" data-tab="upcoming" type="button">Upcoming</button>
+        <button class="tab" data-tab="all" type="button">All</button>
+        <button class="tab" data-tab="slots" type="button">Slots &amp; blocking</button>
+      </div>
+      <div class="bar"><span id="admUpdated" class="live"></span><span class="barbtns"><button class="btn btn-primary btn-sm" id="admNew" type="button">＋ New appointment</button><button class="btn btn-soft btn-sm" id="admRefresh" type="button">↻ Refresh</button></span></div>
+      <div id="admContent"></div>
+    </div>
+  </div>
+</div>
+<div class="modal top" id="apptModal" role="dialog" aria-modal="true" aria-labelledby="apTitle">
+  <div class="card" style="max-width:560px;text-align:left">
+    <h3 id="apTitle">Appointment</h3>
+    <form id="apForm" novalidate>
+      <div class="grid2">
+        <div class="field"><label class="lbl" for="apName">Client name</label><input type="text" id="apName"></div>
+        <div class="field"><label class="lbl" for="apPhone">Contact number</label><input type="tel" id="apPhone"></div>
+      </div>
+      <div class="field"><label class="lbl" for="apSocial">Facebook / Instagram</label><input type="text" id="apSocial"></div>
+      <div class="grid2">
+        <div class="field"><label class="lbl" for="apDate">Date</label><input type="date" id="apDate"></div>
+        <div class="field"><label class="lbl" for="apSlot">Time</label><select id="apSlot"></select></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label class="lbl" for="apStatus">Status</label><select id="apStatus"></select></div>
+        <div class="field"><label class="lbl" for="apClients">Clients</label><input type="number" id="apClients" min="1" max="10" value="1"></div>
+      </div>
+      <div class="field"><label class="lbl">Services</label><div id="apServices"></div></div>
+      <div class="grid2">
+        <div class="field"><label class="lbl" for="apDrink">Free drink</label><select id="apDrink"></select></div>
+        <div class="field"><label class="lbl" for="apTotal">Total ₱ (blank = auto)</label><input type="number" id="apTotal" min="0"></div>
+      </div>
+      <div class="field"><label class="lbl" for="apDesign">Design notes</label><textarea id="apDesign"></textarea></div>
+      <div class="field"><label class="lbl" for="apComment">Note for the client (shown in their “My Booking” page)</label><textarea id="apComment" placeholder="e.g. Moved to 3 PM because of a power outage. Sorry!" maxlength="500"></textarea></div>
+      <div class="msg no" id="apErr" style="display:none"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+        <button class="btn btn-primary" type="submit" id="apSave">Save</button>
+        <button class="btn btn-ghost" type="button" id="apCancel">Cancel</button>
+        <button class="btn btn-danger" type="button" id="apDelete" style="margin-left:auto">Delete</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal top" id="cmModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+  <div class="card" style="text-align:left">
+    <h3 id="cmTitle">Add a comment</h3>
+    <p id="cmDesc"></p>
+    <textarea id="cmText" maxlength="500" placeholder="Optional message to the client…"></textarea>
+    <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><button class="btn btn-primary" id="cmOk" type="button">Continue</button><button class="btn btn-ghost" id="cmNo" type="button">Back</button></div>
+  </div>
+</div>
+
+<div class="atoast" id="atoast"></div>
+
+<script src="js/config.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/pwa.js"></script>
+</body>
+</html>
